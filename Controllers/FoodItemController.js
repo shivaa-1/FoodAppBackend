@@ -1,4 +1,5 @@
 const foodItem = require('../Models/FoodItemModel');
+// const RestaurantUserModel = require('../Models/RestaurantUserModel');
 const restaurantUsers = require('../Models/RestaurantUserModel');
 const asyncHandler = require('express-async-handler');
 
@@ -27,7 +28,7 @@ const createFoodItem = asyncHandler(async(req,res)=>{
             {_id:item._id},
             {$push:{restaurants:req.restaurant._id}},
             {new:true}
-        )
+        );
     
         res.status(201).send(menu);    
         
@@ -41,6 +42,7 @@ const getAllItems = asyncHandler(async(req,res)=>{
 
     const items = await foodItem.find({})
     .select('-updatedAt -CreatedAt')
+    .populate("restaurants","restaurantName")
     .exec();
 
     res.status(200).send(items)

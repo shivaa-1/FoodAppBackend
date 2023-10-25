@@ -71,7 +71,7 @@ const loginRestaurantUser = asyncHandler(async(req,res)=>{
                 address:user.address,
                 closingtime:user.closingtime,
                 openingtime:user.openingtime,
-                token
+                token:token
             })
         }else{
             res.status(400).send("Please Enter Credentials Details")

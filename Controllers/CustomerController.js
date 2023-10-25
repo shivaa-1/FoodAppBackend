@@ -74,4 +74,16 @@ const loginUser = asyncHandler(async(req,res)=>{
     }
 });
 
-module.exports ={registerUser,loginUser};
+const getMe =async(req,res)=>{
+    console.log(req.user);
+    console.log(req.user.id);
+    const user = await Customer.findById(req.user._id);
+    
+    res.status(200).send({
+        name:user.name,
+        email:user.email,
+        token:user.token
+    })
+};
+
+module.exports ={registerUser,loginUser,getMe};

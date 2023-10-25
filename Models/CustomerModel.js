@@ -16,7 +16,7 @@ const customerSchema = mongoose.Schema(
         },
         password:{
             type:String,
-            required:[true,"Please Enter Password"]
+            requiredn:[true,"Please Enter Password"]
         }
     },
     {

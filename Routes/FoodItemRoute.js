@@ -5,7 +5,7 @@ const{updateItem}=require('../Controllers/FoodItemController');
 const{deleteItem}=require('../Controllers/FoodItemController');
 const {protect} = require('../Middleware/RestaurantAuthMiddleware');
 
-router.put('/createfooditem',protect,createFoodItem);
+router.post('/createfooditem',protect,createFoodItem);
 router.put('/updateitem/:id',updateItem);
 router.delete('/removeitem/:id',deleteItem);
 

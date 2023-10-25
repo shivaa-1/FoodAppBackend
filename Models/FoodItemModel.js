@@ -24,7 +24,7 @@ const foodItem = mongoose.Schema(
     },
     restaurants:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"restaurantsUsers"
+        ref:"restaurantUsers"
     }]
 },{timestamps:true}
 );

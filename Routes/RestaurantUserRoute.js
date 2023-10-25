@@ -13,6 +13,6 @@ router.post('/login',loginRestaurantUser);
 router.get('/all',allRestaurant);
 router.get('/restaurant',protect,getRestaurant);
 router.get('/allitems',getAllItems);
-router.get('/item/:id',protect,getItem);
+router.get('/item/:id',getItem);
 
 module.exports = router;
