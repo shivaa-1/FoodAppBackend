@@ -62,7 +62,7 @@ const loginRestaurantUser = asyncHandler(async(req,res)=>{
         const newPassword = await bcrypt.compare(password,user.password);
 
         if(newPassword){
-            const token =jwt.sign({id:user._id},process.env.JWT_sECRET_KEY,{expiresIn:process.env.JWT_EXPIRE});
+            const token =jwt.sign({id:user._id},process.env.JWT_SECRET_KEY,{expiresIn:process.env.JWT_EXPIRE});
 
             res.status(200).send({
                 id:user._id,
